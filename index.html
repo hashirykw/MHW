@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MHW Enterprises — Website Design Studio | Karachi</title>
+<meta name="description" content="MHW Enterprises — Professional website design for local businesses in Karachi. Mobile-friendly, affordable, fast delivery."/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+:root{
+  --bg:#080808;--bg2:#0e0e0e;--bg3:#161616;--bg4:#1e1e1e;
+  --text:#f2f0eb;--text2:#aaa;--text3:#555;
+  --accent:#d4c5a9;--accent2:#c8b590;--accentl:#ede5d5;
+  --border:#222;--border2:#2e2e2e;--card:#111;--nav:#080808f5;
+  --lf:brightness(1);
+}
+.theme-ocean{--bg:#020c16;--bg2:#051525;--bg3:#08203a;--bg4:#0d2d50;--text:#ddeeff;--text2:#7aadcc;--accent:#3d9be8;--accent2:#1a70bb;--accentl:#a8d4f8;--border:#0e2a44;--border2:#163a5c;--card:#040f1d;--nav:#020c16f5;}
+.theme-forest{--bg:#040c04;--bg2:#081508;--bg3:#0e200e;--bg4:#142a14;--text:#e0f0e0;--text2:#6aaa6a;--accent:#52c452;--accent2:#2d962d;--accentl:#a8e8a8;--border:#102010;--border2:#1a341a;--card:#060e06;--nav:#040c04f5;}
+.theme-violet{--bg:#09060f;--bg2:#110d1e;--bg3:#1a142e;--bg4:#231b3e;--text:#ede8ff;--text2:#9080cc;--accent:#9b7ef8;--accent2:#6a4ed4;--accentl:#cdc0fc;--border:#1e1530;--border2:#2a1f44;--card:#0d0a18;--nav:#09060ff5;}
+.theme-rose{--bg:#0f0508;--bg2:#1a0910;--bg3:#260f18;--bg4:#321520;--text:#ffe8ee;--text2:#cc7890;--accent:#f06080;--accent2:#c03050;--accentl:#f8b0c0;--border:#281018;--border2:#3a1825;--card:#120608;--nav:#0f0508f5;}
+
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;scroll-behavior:smooth;line-height:1.65;}
+a{text-decoration:none;color:inherit;}
+img{display:block;max-width:100%;}
+.wrap{max-width:1100px;margin:0 auto;padding:0 1.35rem;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:var(--nav);border-bottom:1px solid var(--border);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 1.35rem;height:66px;display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:10px;cursor:pointer;flex-shrink:0;}
+.logo-img{width:46px;height:46px;border-radius:50%;overflow:hidden;border:1.5px solid var(--accent);background:#000;flex-shrink:0;transition:border-color .3s;}
+.logo-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.logo-words .name{font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-weight:700;color:var(--accent);letter-spacing:.02em;transition:color .3s;white-space:nowrap;}
+.logo-words .sub{font-size:.6rem;color:var(--text3);text-transform:uppercase;letter-spacing:.12em;white-space:nowrap;}
+.nav-links{display:flex;align-items:center;gap:.1rem;}
+.nav-links a{font-size:.83rem;color:var(--text2);padding:.48rem .85rem;border-radius:8px;transition:color .18s,background .18s;white-space:nowrap;}
+.nav-links a:hover{color:var(--text);background:var(--bg3);}
+.nav-cta{background:var(--accent)!important;color:#0a0a0a!important;font-weight:700!important;}
+.nav-cta:hover{opacity:.88!important;}
+.hmbg{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:.5rem;border-radius:8px;}
+.hmbg span{display:block;width:23px;height:2px;background:var(--text2);border-radius:2px;transition:.3s;}
+.hmbg.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hmbg.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.hmbg.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* MOBILE MENU */
+.mob-menu{display:none;position:fixed;top:66px;left:0;right:0;bottom:0;z-index:190;background:var(--bg);overflow-y:auto;}
+.mob-menu.open{display:block;}
+.mob-inner{padding:1.25rem 1.35rem 3rem;}
+.mob-inner a{display:flex;align-items:center;gap:.75rem;padding:1.05rem 1.2rem;font-size:1rem;font-weight:500;color:var(--text2);border-radius:12px;margin-bottom:.3rem;transition:color .18s,background .18s;}
+.mob-inner a i{font-size:1.1rem;color:var(--accent);flex-shrink:0;}
+.mob-inner a:hover{color:var(--text);background:var(--bg3);}
+.mob-cta{background:var(--accent)!important;color:#0a0a0a!important;font-weight:700!important;justify-content:center!important;margin-top:.75rem;}
+.mob-div{border:none;border-top:1px solid var(--border);margin:1rem 0;}
+.mob-ci-row{display:flex;flex-direction:column;gap:.6rem;margin-top:.75rem;}
+.mob-ci{display:flex;align-items:center;gap:.85rem;padding:.9rem 1.1rem;background:var(--bg3);border-radius:12px;font-size:.92rem;color:var(--text2);}
+.mob-ci i{font-size:1.1rem;color:var(--accent);flex-shrink:0;}
+
+/* HERO */
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:5rem 1.35rem 3.5rem;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1400&q=80&auto=format&fit=crop') center/cover no-repeat;opacity:.07;z-index:0;}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(circle,var(--border2) 1px,transparent 1px);background-size:30px 30px;opacity:.45;z-index:0;}
+.hero-glow{position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(212,197,169,.04) 0%,transparent 70%);z-index:0;pointer-events:none;}
+.hero-c{position:relative;z-index:1;max-width:680px;width:100%;}
+.badge{display:inline-flex;align-items:center;gap:.45rem;background:var(--bg3);border:1px solid var(--border2);color:var(--text2);font-size:.76rem;padding:.42rem 1rem;border-radius:24px;margin-bottom:1.65rem;letter-spacing:.07em;text-transform:uppercase;font-weight:500;}
+.badge i{color:var(--accent);font-size:.88rem;}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.3rem,7vw,4.8rem);font-weight:700;line-height:1.05;letter-spacing:-.03em;margin-bottom:1.25rem;}
+.hero h1 em{font-style:normal;color:var(--accent);}
+.hero-desc{font-size:1.05rem;color:var(--text2);max-width:460px;margin:0 auto 2.25rem;line-height:1.75;}
+.hero-btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:3.25rem;}
+.btn-p{background:var(--accent);color:#0a0a0a;font-weight:700;padding:.95rem 1.85rem;border-radius:11px;font-size:.97rem;display:inline-flex;align-items:center;gap:.5rem;transition:opacity .18s,transform .18s;min-height:52px;}
+.btn-p:hover{opacity:.86;transform:translateY(-2px);}
+.btn-o{border:1.5px solid var(--border2);color:var(--text);padding:.95rem 1.85rem;border-radius:11px;font-size:.97rem;display:inline-flex;align-items:center;gap:.5rem;transition:border-color .18s,color .18s,transform .18s;min-height:52px;}
+.btn-o:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
+.hero-stats{display:flex;gap:2.25rem;justify-content:center;flex-wrap:wrap;}
+.stat .num{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;color:var(--accent);line-height:1;}
+.stat .lbl{font-size:.68rem;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;margin-top:.3rem;}
+
+/* SECTIONS */
+section{padding:5rem 0;}
+.sec-eye{font-size:.7rem;color:var(--accent);text-transform:uppercase;letter-spacing:.17em;font-weight:600;margin-bottom:.6rem;}
+.sec-h{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.75rem,4vw,2.6rem);font-weight:700;letter-spacing:-.025em;line-height:1.12;margin-bottom:.9rem;}
+.sec-h em{font-style:normal;color:var(--accent);}
+.sec-rule{width:38px;height:2.5px;background:var(--accent);margin:1rem 0 2.35rem;border-radius:2px;transition:background .3s;}
+.sec-sub{color:var(--text2);font-size:.97rem;line-height:1.72;max-width:520px;}
+
+/* SERVICES */
+.srv-banner{width:100%;height:230px;border-radius:16px;overflow:hidden;border:1px solid var(--border);margin-bottom:2.25rem;}
+.srv-banner img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.srv-banner:hover img{transform:scale(1.03);}
+.srv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;}
+.srv-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.5rem;transition:border-color .22s,transform .22s,background .22s;}
+.srv-card:hover{border-color:var(--accent);transform:translateY(-5px);background:var(--bg3);}
+.srv-ic{width:46px;height:46px;background:var(--bg3);border:1px solid var(--border2);border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--accent);margin-bottom:1rem;transition:background .22s,border-color .22s;}
+.srv-card:hover .srv-ic{background:var(--bg4);border-color:var(--accent);}
+.srv-card h3{font-size:.93rem;font-weight:700;margin-bottom:.45rem;}
+.srv-card p{font-size:.81rem;color:var(--text2);line-height:1.6;}
+.srv-price{font-size:.76rem;color:var(--accent);margin-top:.75rem;font-weight:600;}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
+.about-imgs{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:180px 180px;gap:.75rem;}
+.aimg{border-radius:13px;overflow:hidden;border:1px solid var(--border);}
+.aimg img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+.aimg:hover img{transform:scale(1.06);}
+.aimg.tall{grid-row:span 2;}
+.about-body p{font-size:.95rem;color:var(--text2);line-height:1.75;margin-bottom:.95rem;}
+.atags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.25rem;}
+.atag{background:var(--bg3);border:1px solid var(--border2);color:var(--text2);font-size:.73rem;padding:.28rem .75rem;border-radius:20px;transition:border-color .18s,color .18s;}
+.atag:hover{border-color:var(--accent);color:var(--accent);}
+.qbox{border-left:2.5px solid var(--accent);padding:.95rem 1.2rem;background:var(--bg3);border-radius:0 11px 11px 0;margin-top:1.35rem;}
+.qbox p{font-size:.88rem;color:var(--text);line-height:1.68;font-style:italic;}
+
+/* PORTFOLIO */
+.port-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.25rem;}
+.port-card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color .22s,transform .22s;display:flex;flex-direction:column;}
+.port-card:hover{border-color:var(--accent);transform:translateY(-5px);}
+.port-thumb{height:185px;overflow:hidden;position:relative;flex-shrink:0;}
+.port-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .45s;}
+.port-card:hover .port-thumb img{transform:scale(1.07);}
+.port-over{position:absolute;inset:0;background:rgba(0,0,0,.52);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .25s;}
+.port-card:hover .port-over{opacity:1;}
+.port-over a{background:var(--accent);color:#0a0a0a;font-size:.83rem;font-weight:700;padding:.6rem 1.2rem;border-radius:9px;display:flex;align-items:center;gap:.4rem;}
+.port-live{position:absolute;top:.8rem;left:.8rem;background:var(--accent);color:#0a0a0a;font-size:.63rem;font-weight:700;padding:.22rem .6rem;border-radius:20px;}
+.port-body{padding:1.35rem;display:flex;flex-direction:column;flex:1;}
+.port-body h3{font-size:.95rem;font-weight:700;margin-bottom:.4rem;}
+.port-body p{font-size:.82rem;color:var(--text2);line-height:1.65;margin-bottom:1rem;flex:1;}
+.port-tags{display:flex;gap:.35rem;flex-wrap:wrap;margin-bottom:1rem;}
+.port-tag{font-size:.68rem;background:var(--bg3);border:1px solid var(--border2);color:var(--text3);padding:.2rem .58rem;border-radius:20px;}
+.port-link{display:inline-flex;align-items:center;gap:.35rem;font-size:.83rem;color:var(--accent);font-weight:500;background:var(--bg3);border:1px solid var(--border2);padding:.55rem 1rem;border-radius:8px;transition:border-color .18s,background .18s;align-self:flex-start;}
+.port-link:hover{border-color:var(--accent);background:var(--bg4);}
+
+/* PROCESS */
+.proc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2.25rem;}
+.proc-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.5rem;text-align:center;transition:border-color .22s,transform .22s;}
+.proc-card:hover{border-color:var(--accent);transform:translateY(-4px);}
+.proc-n{font-family:'Space Grotesk',sans-serif;font-size:2.4rem;font-weight:700;color:var(--border2);margin-bottom:.8rem;transition:color .22s;}
+.proc-card:hover .proc-n{color:var(--accent);}
+.proc-card h3{font-size:.92rem;font-weight:700;margin-bottom:.42rem;}
+.proc-card p{font-size:.81rem;color:var(--text2);line-height:1.6;}
+
+/* PRICING */
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;}
+.price-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.75rem;display:flex;flex-direction:column;transition:border-color .22s,transform .22s;}
+.price-card:hover{transform:translateY(-4px);}
+.price-card.hot{border-color:var(--accent);}
+.price-card:not(.hot):hover{border-color:var(--border2);}
+.p-badge{display:inline-block;font-size:.67rem;background:var(--accent);color:#0a0a0a;font-weight:700;padding:.23rem .72rem;border-radius:20px;margin-bottom:.7rem;}
+.p-name{font-family:'Space Grotesk',sans-serif;font-size:1.08rem;font-weight:700;margin-bottom:.22rem;}
+.p-price{font-size:2.1rem;font-weight:800;color:var(--accent);line-height:1;margin:.5rem 0 .28rem;}
+.p-price span{font-size:.82rem;color:var(--text2);font-weight:400;}
+.p-desc{font-size:.81rem;color:var(--text2);margin-bottom:1.25rem;line-height:1.55;flex:1;}
+.p-feats{list-style:none;display:flex;flex-direction:column;gap:.52rem;margin-bottom:1.5rem;}
+.p-feats li{font-size:.83rem;color:var(--text2);display:flex;align-items:flex-start;gap:.48rem;line-height:1.4;}
+.p-feats li i{color:var(--accent);font-size:.88rem;flex-shrink:0;margin-top:.1rem;}
+.p-btn{display:flex;align-items:center;justify-content:center;gap:.45rem;width:100%;padding:.82rem 1rem;border-radius:10px;font-size:.87rem;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;transition:opacity .18s,transform .18s;text-align:center;min-height:48px;white-space:nowrap;}
+.p-btn:hover{opacity:.84;transform:translateY(-1px);}
+.p-btn-fill{background:var(--accent);color:#0a0a0a;border:none;}
+.p-btn-out{background:none;border:1.5px solid var(--border2);color:var(--text);}
+.p-btn-out:hover{border-color:var(--accent);color:var(--accent);}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;}
+.c-info{display:flex;flex-direction:column;gap:.75rem;}
+.c-photo{width:100%;height:185px;border-radius:14px;overflow:hidden;border:1px solid var(--border);}
+.c-photo img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+.c-photo:hover img{transform:scale(1.04);}
+.c-item{display:flex;align-items:center;gap:.88rem;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.95rem 1.15rem;transition:border-color .22s,transform .18s;}
+.c-item:hover{border-color:var(--accent);transform:translateX(4px);}
+.c-item i{font-size:1.18rem;color:var(--accent);flex-shrink:0;}
+.c-lbl{font-size:.73rem;color:var(--text3);}
+.c-val{font-size:.91rem;font-weight:600;}
+.wa-big{background:var(--accent);color:#0a0a0a;font-weight:700;border-radius:12px;padding:1.1rem 1.3rem;display:flex;align-items:center;justify-content:center;gap:.58rem;font-size:.98rem;transition:opacity .18s,transform .18s;min-height:54px;}
+.wa-big:hover{opacity:.86;transform:translateY(-2px);}
+.c-form{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.75rem;}
+.c-form h3{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:1.3rem;}
+.fg{margin-bottom:1rem;}
+.fg label{font-size:.78rem;color:var(--text2);display:block;margin-bottom:.42rem;}
+.fg input,.fg textarea,.fg select{width:100%;background:var(--bg3);border:1px solid var(--border2);color:var(--text);padding:.78rem .98rem;border-radius:10px;font-size:.92rem;font-family:'Inter',sans-serif;outline:none;transition:border-color .18s;min-height:50px;}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--accent);}
+.fg textarea{resize:vertical;min-height:90px;}
+.fg select option{background:var(--bg3);}
+.f-submit{width:100%;background:var(--accent);color:#0a0a0a;font-weight:700;padding:.88rem;border:none;border-radius:10px;cursor:pointer;font-family:'Inter',sans-serif;font-size:.95rem;transition:opacity .18s,transform .18s;display:flex;align-items:center;justify-content:center;gap:.48rem;min-height:52px;}
+.f-submit:hover{opacity:.86;transform:translateY(-1px);}
+
+/* THEME BAR */
+.tbar{background:var(--bg2);border-top:1px solid var(--border);padding:1.1rem 1.35rem;display:flex;align-items:center;gap:.55rem;flex-wrap:wrap;}
+.tbar-lbl{font-size:.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;margin-right:.2rem;flex-shrink:0;}
+.tbtn{background:none;border:1px solid var(--border2);color:var(--text2);padding:.4rem .88rem;border-radius:24px;cursor:pointer;font-size:.76rem;font-family:inherit;display:flex;align-items:center;gap:.4rem;min-height:36px;transition:border-color .18s,color .18s;}
+.tbtn:hover,.tbtn.on{border-color:var(--accent);color:var(--accent);}
+.tdot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.25rem 1.35rem;}
+.foot-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.25rem;}
+.foot-brand{display:flex;align-items:center;gap:.75rem;}
+.foot-logo{width:34px;height:34px;border-radius:50%;overflow:hidden;border:1.5px solid var(--accent);background:#000;flex-shrink:0;}
+.foot-logo img{width:100%;height:100%;object-fit:cover;display:block;}
+.foot-info{font-size:.8rem;color:var(--text3);line-height:1.65;}
+.foot-info a{color:var(--accent);}
+.foot-links{display:flex;gap:1.1rem;flex-wrap:wrap;}
+.foot-links a{font-size:.8rem;color:var(--text3);transition:color .18s;}
+.foot-links a:hover{color:var(--accent);}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .hmbg{display:flex;}
+  section{padding:3.5rem 0;}
+  .sec-h{font-size:1.85rem;}
+  .about-grid,.contact-grid{grid-template-columns:1fr;}
+  .about-imgs{grid-template-rows:145px 145px;order:-1;}
+  .port-grid{grid-template-columns:1fr;}
+  .proc-grid{grid-template-columns:1fr 1fr;}
+  .price-grid{grid-template-columns:1fr;}
+  .srv-grid{grid-template-columns:1fr 1fr;}
+  .hero{padding:4.5rem 1.25rem 3rem;}
+  .hero h1{font-size:clamp(2rem,9vw,3.2rem);}
+  .hero-btns{flex-direction:column;align-items:center;}
+  .btn-p,.btn-o{width:100%;max-width:320px;justify-content:center;}
+  .hero-stats{gap:1.5rem;}
+  .tbar{justify-content:center;}
+  footer .foot-inner{flex-direction:column;align-items:flex-start;}
+}
+@media(max-width:420px){
+  .srv-grid{grid-template-columns:1fr;}
+  .proc-grid{grid-template-columns:1fr;}
+  .hero h1{font-size:1.9rem;}
+  .hero-stats{gap:1.1rem;}
+  .stat .num{font-size:1.7rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo" onclick="goTo('home')">
+      <div class="logo-img">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjAwIDIwMCI+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iOTgiIGZpbGw9IiMwYTBhMGEiLz4KPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI4OCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDRjNWE5IiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8ZWxsaXBzZSBjeD0iMTAwIiBjeT0iMTAwIiByeD0iNDQiIHJ5PSI4OCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDRjNWE5IiBzdHJva2Utd2lkdGg9IjEuMiIvPgo8ZWxsaXBzZSBjeD0iMTAwIiBjeT0iMTAwIiByeD0iODgiIHJ5PSIzMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDRjNWE5IiBzdHJva2Utd2lkdGg9IjEuMiIvPgo8ZWxsaXBzZSBjeD0iMTAwIiBjeT0iMTAwIiByeD0iODgiIHJ5PSI2MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDRjNWE5IiBzdHJva2Utd2lkdGg9IjAuOCIgc3Ryb2tlLWRhc2hhcnJheT0iMywzIi8+CjxsaW5lIHgxPSIxMiIgeTE9IjEwMCIgeDI9IjE4OCIgeTI9IjEwMCIgc3Ryb2tlPSIjZDRjNWE5IiBzdHJva2Utd2lkdGg9IjEuMiIvPgo8bGluZSB4MT0iMTAwIiB5MT0iMTIiIHgyPSIxMDAiIHkyPSIxODgiIHN0cm9rZT0iI2Q0YzVhOSIgc3Ryb2tlLXdpZHRoPSIxLjIiLz4KPHJlY3QgeD0iMjYiIHk9IjcyIiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjU2IiByeD0iNiIgZmlsbD0iIzBhMGEwYSIvPgo8dGV4dCB4PSIxMDAiIHk9IjEwOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNDYiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNkNGM1YTkiIGxldHRlci1zcGFjaW5nPSItMSI+TUhXPC90ZXh0Pgo8dGV4dCB4PSIxMDAiIHk9IjE3NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiNkNGM1YTkiIGxldHRlci1zcGFjaW5nPSIzIj5FTlRFUlBSSVNFUzwvdGV4dD4KPHRleHQgeD0iMTAwIiB5PSIxODgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjgiIGZvbnQtd2VpZ2h0PSI1MDAiIGZpbGw9IiM4ODgiIGxldHRlci1zcGFjaW5nPSI0Ij5XRUJTSVRFIERFU0lHTiBTVFVESU88L3RleHQ+Cjwvc3ZnPg==" alt="MHW Enterprises Logo"/>
+      </div>
+      <div class="logo-words">
+        <div class="name">MHW Enterprises</div>
+        <div class="sub">Website Design Studio</div>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
+    <button class="hmbg" id="hmbg" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <div class="mob-inner">
+    <a href="#home" onclick="closeMenu()"><i class="ti ti-home" aria-hidden="true"></i>Home</a>
+    <a href="#about" onclick="closeMenu()"><i class="ti ti-info-circle" aria-hidden="true"></i>About</a>
+    <a href="#services" onclick="closeMenu()"><i class="ti ti-device-laptop" aria-hidden="true"></i>Services</a>
+    <a href="#portfolio" onclick="closeMenu()"><i class="ti ti-briefcase" aria-hidden="true"></i>Portfolio</a>
+    <a href="#process" onclick="closeMenu()"><i class="ti ti-list-check" aria-hidden="true"></i>Process</a>
+    <a href="#pricing" onclick="closeMenu()"><i class="ti ti-tag" aria-hidden="true"></i>Pricing</a>
+    <a href="#contact" onclick="closeMenu()"><i class="ti ti-map-pin" aria-hidden="true"></i>Contact</a>
+    <hr class="mob-div"/>
+    <a href="https://wa.me/923053687680?text=Hi%20Hashir!%20I%20want%20a%20website." target="_blank" class="mob-cta" onclick="closeMenu()">
+      <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>Chat on WhatsApp
+    </a>
+    <div class="mob-ci-row">
+      <div class="mob-ci"><i class="ti ti-phone" aria-hidden="true"></i><span>+92 305 3687680</span></div>
+      <div class="mob-ci"><i class="ti ti-mail" aria-hidden="true"></i><span>mhenterprises10609@gmail.com</span></div>
+      <div class="mob-ci"><i class="ti ti-map-pin" aria-hidden="true"></i><span>Karachi, Pakistan</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-dots"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-c">
+    <div class="badge"><i class="ti ti-map-pin" aria-hidden="true"></i>Based in Karachi, Pakistan</div>
+    <h1>Your Business Deserves<br/>A <em>Professional</em><br/>Online Presence</h1>
+    <p class="hero-desc">We build clean, fast, mobile-friendly websites for local businesses in Karachi — at prices that make sense for you.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/923053687680?text=Hi%20Hashir!%20I%20want%20a%20website%20for%20my%20business." class="btn-p" target="_blank"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i>Get a Free Quote</a>
+      <a href="#portfolio" class="btn-o"><i class="ti ti-eye" aria-hidden="true"></i>See Our Work</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="num">100%</div><div class="lbl">Mobile Ready</div></div>
+      <div class="stat"><div class="num">Fast</div><div class="lbl">Delivery</div></div>
+      <div class="stat"><div class="num">24/7</div><div class="lbl">Support</div></div>
+      <div class="stat"><div class="num">PKR</div><div class="lbl">Affordable</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="sec-eye">What We Offer</div>
+    <h2 class="sec-h">Our <em>Services</em></h2>
+    <div class="sec-rule"></div>
+    <div class="srv-banner">
+      <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=1200&q=80&auto=format&fit=crop" alt="Web design workspace" loading="lazy"/>
+    </div>
+    <div class="srv-grid">
+      <div class="srv-card"><div class="srv-ic"><i class="ti ti-device-laptop" aria-hidden="true"></i></div><h3>Business Website</h3><p>Multi-page site with your services, contact, and location — built to impress.</p><div class="srv-price">From Rs. 12,000</div></div>
+      <div class="srv-card"><div class="srv-ic"><i class="ti ti-device-mobile" aria-hidden="true"></i></div><h3>Mobile-First Design</h3><p>Every site we build looks perfect on all phones and screen sizes.</p><div class="srv-price">Included in all plans</div></div>
+      <div class="srv-card"><div class="srv-ic"><i class="ti ti-shopping-cart" aria-hidden="true"></i></div><h3>Online Store</h3><p>Sell your products online with a clean, easy-to-manage store.</p><div class="srv-price">From Rs. 35,000</div></div>
+      <div class="srv-card"><div class="srv-ic"><i class="ti ti-refresh" aria-hidden="true"></i></div><h3>Website Redesign</h3><p>Old or broken website? We rebuild it modern and mobile-ready.</p><div class="srv-price">From Rs. 8,000</div></div>
+      <div class="srv-card"><div class="srv-ic"><i class="ti ti-brand-google" aria-hidden="true"></i></div><h3>Google Maps Listing</h3><p>Get your business on Google Maps so customers find you instantly.</p><div class="srv-price">From Rs. 3,000</div></div>
+      <div class="srv-card"><div class="srv-ic"><i class="ti ti-headset" aria-hidden="true"></i></div><h3>Ongoing Support</h3><p>Updates and maintenance — we're here long after delivery.</p><div class="srv-price">Monthly plans available</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-imgs">
+        <div class="aimg tall"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80&auto=format&fit=crop" alt="Developer coding" loading="lazy"/></div>
+        <div class="aimg"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80&auto=format&fit=crop" alt="Team working" loading="lazy"/></div>
+        <div class="aimg"><img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&q=80&auto=format&fit=crop" alt="Business meeting" loading="lazy"/></div>
+      </div>
+      <div>
+        <div class="sec-eye">About Us</div>
+        <h2 class="sec-h">We Help Local Businesses <em>Go Online</em></h2>
+        <div class="sec-rule"></div>
+        <p>At MHW Enterprises, we build clean and professional websites for local businesses across Karachi. Restaurants, salons, clinics, gyms, shops — we make sure your business looks great online.</p>
+        <p>We understand the local market, speak your language, and deliver results that are affordable — with no hidden fees ever.</p>
+        <div class="atags">
+          <span class="atag">Web Design</span><span class="atag">Mobile-First</span><span class="atag">Local Business</span><span class="atag">Karachi</span><span class="atag">Affordable</span><span class="atag">Fast Delivery</span>
+        </div>
+        <div class="qbox">
+          <p>"Most people search Google before visiting any shop. Without a website, you're invisible to hundreds of potential customers every single day."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="sec-eye">Our Work</div>
+    <h2 class="sec-h">Our <em>Portfolio</em></h2>
+    <div class="sec-rule"></div>
+    <div class="port-grid">
+
+      <div class="port-card">
+        <div class="port-thumb">
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=700&q=80&auto=format&fit=crop" alt="Prime Fitness" loading="lazy"/>
+          <span class="port-live">Live</span>
+          <div class="port-over"><a href="https://hashirykw.github.io/E-Project/" target="_blank"><i class="ti ti-external-link" aria-hidden="true"></i>View Live Site</a></div>
+        </div>
+        <div class="port-body">
+          <h3>Prime Fitness</h3>
+          <div class="port-tags"><span class="port-tag">Gym</span><span class="port-tag">Multi-Page</span><span class="port-tag">BMI Tool</span><span class="port-tag">Gallery</span></div>
+          <p>Full-featured fitness center website with membership plans, trainer profiles, BMI calculator, and enquiry form.</p>
+          <a href="https://hashirykw.github.io/E-Project/" target="_blank" class="port-link"><i class="ti ti-external-link" aria-hidden="true"></i>View Live Site</a>
+        </div>
+      </div>
+
+      <div class="port-card">
+        <div class="port-thumb">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80&auto=format&fit=crop" alt="Professionals Core" loading="lazy"/>
+          <span class="port-live">Live</span>
+          <div class="port-over"><a href="https://hashirykw.github.io/professionals-core-website/" target="_blank"><i class="ti ti-external-link" aria-hidden="true"></i>View Live Site</a></div>
+        </div>
+        <div class="port-body">
+          <h3>Professionals Core</h3>
+          <div class="port-tags"><span class="port-tag">Business</span><span class="port-tag">Professional</span><span class="port-tag">Multi-Page</span></div>
+          <p>Clean, professional business website with modern design, services showcase, and contact integration.</p>
+          <a href="https://hashirykw.github.io/professionals-core-website/" target="_blank" class="port-link"><i class="ti ti-external-link" aria-hidden="true"></i>View Live Site</a>
+        </div>
+      </div>
+
+      <div class="port-card">
+        <div class="port-thumb">
+          <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=700&q=80&auto=format&fit=crop" alt="Power Fitness Zone" loading="lazy"/>
+          <span class="port-live">Live</span>
+          <div class="port-over"><a href="https://hashirykw.github.io/power-fitness-zone-gym-/" target="_blank"><i class="ti ti-external-link" aria-hidden="true"></i>View Live Site</a></div>
+        </div>
+        <div class="port-body">
+          <h3>Power Fitness Zone</h3>
+          <div class="port-tags"><span class="port-tag">Gym</span><span class="port-tag">Pricing Plans</span><span class="port-tag">Class Schedule</span><span class="port-tag">Ladies Section</span></div>
+          <p>Full gym website for North Nazimabad's Power Fitness Zone with all 10 membership plans, class timetable, and ladies section.</p>
+          <a href="https://hashirykw.github.io/power-fitness-zone-gym-/" target="_blank" class="port-link"><i class="ti ti-external-link" aria-hidden="true"></i>View Live Site</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="sec-eye">How It Works</div>
+    <h2 class="sec-h">Our Simple <em>Process</em></h2>
+    <div class="sec-rule"></div>
+    <p class="sec-sub">From first message to live website — here's exactly how we work.</p>
+    <div class="proc-grid">
+      <div class="proc-card"><div class="proc-n">01</div><h3>You Contact Us</h3><p>Send us a WhatsApp message and tell us about your business.</p></div>
+      <div class="proc-card"><div class="proc-n">02</div><h3>We Plan Together</h3><p>We suggest the right pages, design style, and features for you.</p></div>
+      <div class="proc-card"><div class="proc-n">03</div><h3>We Build It</h3><p>Our team designs and develops your website — fast, clean, mobile-friendly.</p></div>
+      <div class="proc-card"><div class="proc-n">04</div><h3>You Go Live</h3><p>We launch your site and you start getting found by new customers online.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="sec-eye">Pricing</div>
+    <h2 class="sec-h">Simple & <em>Affordable Plans</em></h2>
+    <div class="sec-rule"></div>
+    <p class="sec-sub" style="margin-bottom:2.25rem;">One-time payment only. No hidden charges. No monthly fees.</p>
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="p-name">Basic</div>
+        <div class="p-price">Rs. 15,000 <span>one time</span></div>
+        <div class="p-desc">Perfect for small shops and solo businesses just getting started.</div>
+        <ul class="p-feats">
+          <li><i class="ti ti-check" aria-hidden="true"></i>3 Pages</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Mobile Friendly</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>WhatsApp Button</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Google Maps</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>7 Days Delivery</li>
+        </ul>
+        <a href="https://wa.me/923053687680?text=Hi%20Hashir!%20Basic%20plan%20inquiry." target="_blank" class="p-btn p-btn-out"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i>WhatsApp Us</a>
+      </div>
+      <div class="price-card hot">
+        <div class="p-badge">Most Popular</div>
+        <div class="p-name">Standard</div>
+        <div class="p-price">Rs. 30,000 <span>one time</span></div>
+        <div class="p-desc">Best for restaurants, salons, and growing businesses.</div>
+        <ul class="p-feats">
+          <li><i class="ti ti-check" aria-hidden="true"></i>5–7 Pages</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Mobile Friendly</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Photo Gallery</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Inquiry Form</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>WhatsApp Button</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Google Maps</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>10 Days Delivery</li>
+        </ul>
+        <a href="https://wa.me/923053687680?text=Hi%20Hashir!%20Standard%20plan%20inquiry." target="_blank" class="p-btn p-btn-fill"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i>WhatsApp Us</a>
+      </div>
+      <div class="price-card">
+        <div class="p-name">Premium</div>
+        <div class="p-price">Rs. 60,000+ <span>one time</span></div>
+        <div class="p-desc">For established businesses wanting a full-featured online presence.</div>
+        <ul class="p-feats">
+          <li><i class="ti ti-check" aria-hidden="true"></i>8+ Pages</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Booking / Online Store</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Custom Animations</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>SEO Optimized</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Social Media Links</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Priority Support</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>15 Days Delivery</li>
+        </ul>
+        <a href="https://wa.me/923053687680?text=Hi%20Hashir!%20Premium%20plan%20inquiry." target="_blank" class="p-btn p-btn-out"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i>WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-eye">Get In Touch</div>
+    <h2 class="sec-h">Let's Build Your <em>Website</em></h2>
+    <div class="sec-rule"></div>
+    <div class="contact-grid">
+      <div class="c-info">
+        <div class="c-photo"><img src="https://images.unsplash.com/photo-1596524430615-b46475ddff6e?w=700&q=80&auto=format&fit=crop" alt="Karachi" loading="lazy"/></div>
+        <a href="https://wa.me/923053687680" target="_blank" class="c-item"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i><div><div class="c-lbl">WhatsApp</div><div class="c-val">+92 305 3687680</div></div></a>
+        <a href="mailto:mhenterprises10609@gmail.com" class="c-item"><i class="ti ti-mail" aria-hidden="true"></i><div><div class="c-lbl">Email</div><div class="c-val">mhenterprises10609@gmail.com</div></div></a>
+        <div class="c-item"><i class="ti ti-map-pin" aria-hidden="true"></i><div><div class="c-lbl">Location</div><div class="c-val">Karachi, Pakistan</div></div></div>
+        <div class="c-item"><i class="ti ti-clock" aria-hidden="true"></i><div><div class="c-lbl">Working Hours</div><div class="c-val">Mon – Sat, 10am – 8pm</div></div></div>
+        <a href="https://wa.me/923053687680?text=Hi%20Hashir!%20I%20want%20a%20website%20for%20my%20business." target="_blank" class="wa-big"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i>Chat on WhatsApp Now</a>
+      </div>
+      <div class="c-form">
+        <h3>Send a Message</h3>
+        <div class="fg"><label>Your Name</label><input type="text" placeholder="e.g. Ali Khan" id="fn"/></div>
+        <div class="fg"><label>Business Name</label><input type="text" placeholder="e.g. Ali's Restaurant" id="fb"/></div>
+        <div class="fg"><label>Service Needed</label>
+          <select id="fs">
+            <option>Basic Website (3 pages)</option>
+            <option>Standard Website (5-7 pages)</option>
+            <option>Premium Website</option>
+            <option>Website Redesign</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="fg"><label>Message</label><textarea placeholder="Tell us about your business..." id="fm"></textarea></div>
+        <button class="f-submit" onclick="sendWA()"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i>Send via WhatsApp</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THEME BAR -->
+<div class="tbar">
+  <span class="tbar-lbl">Theme:</span>
+  <button class="tbtn on" onclick="setTheme('',this)"><span class="tdot" style="background:#d4c5a9;"></span>Midnight</button>
+  <button class="tbtn" onclick="setTheme('theme-ocean',this)"><span class="tdot" style="background:#3d9be8;"></span>Ocean</button>
+  <button class="tbtn" onclick="setTheme('theme-forest',this)"><span class="tdot" style="background:#52c452;"></span>Forest</button>
+  <button class="tbtn" onclick="setTheme('theme-violet',this)"><span class="tdot" style="background:#9b7ef8;"></span>Violet</button>
+  <button class="tbtn" onclick="setTheme('theme-rose',this)"><span class="tdot" style="background:#f06080;"></span>Rose</button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <div class="foot-logo"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjAwIDIwMCI+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iOTgiIGZpbGw9IiMwYTBhMGEiLz4KPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI4OCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDRjNWE5IiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8ZWxsaXBzZSBjeD0iMTAwIiBjeT0iMTAwIiByeD0iNDQiIHJ5PSI4OCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDRjNWE5IiBzdHJva2Utd2lkdGg9IjEuMiIvPgo8ZWxsaXBzZSBjeD0iMTAwIiBjeT0iMTAwIiByeD0iODgiIHJ5PSIzMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDRjNWE5IiBzdHJva2Utd2lkdGg9IjEuMiIvPgo8ZWxsaXBzZSBjeD0iMTAwIiBjeT0iMTAwIiByeD0iODgiIHJ5PSI2MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDRjNWE5IiBzdHJva2Utd2lkdGg9IjAuOCIgc3Ryb2tlLWRhc2hhcnJheT0iMywzIi8+CjxsaW5lIHgxPSIxMiIgeTE9IjEwMCIgeDI9IjE4OCIgeTI9IjEwMCIgc3Ryb2tlPSIjZDRjNWE5IiBzdHJva2Utd2lkdGg9IjEuMiIvPgo8bGluZSB4MT0iMTAwIiB5MT0iMTIiIHgyPSIxMDAiIHkyPSIxODgiIHN0cm9rZT0iI2Q0YzVhOSIgc3Ryb2tlLXdpZHRoPSIxLjIiLz4KPHJlY3QgeD0iMjYiIHk9IjcyIiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjU2IiByeD0iNiIgZmlsbD0iIzBhMGEwYSIvPgo8dGV4dCB4PSIxMDAiIHk9IjEwOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNDYiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNkNGM1YTkiIGxldHRlci1zcGFjaW5nPSItMSI+TUhXPC90ZXh0Pgo8dGV4dCB4PSIxMDAiIHk9IjE3NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiNkNGM1YTkiIGxldHRlci1zcGFjaW5nPSIzIj5FTlRFUlBSSVNFUzwvdGV4dD4KPHRleHQgeD0iMTAwIiB5PSIxODgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjgiIGZvbnQtd2VpZ2h0PSI1MDAiIGZpbGw9IiM4ODgiIGxldHRlci1zcGFjaW5nPSI0Ij5XRUJTSVRFIERFU0lHTiBTVFVESU88L3RleHQ+Cjwvc3ZnPg==" alt="MHW Enterprises"/></div>
+      <div class="foot-info">
+        © 2025 MHW Enterprises — Karachi, Pakistan<br/>
+        <a href="https://wa.me/923053687680" target="_blank">+92 305 3687680</a> &nbsp;·&nbsp;
+        <a href="mailto:mhenterprises10609@gmail.com">mhenterprises10609@gmail.com</a>
+      </div>
+    </div>
+    <div class="foot-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){var m=document.getElementById('mobMenu'),h=document.getElementById('hmbg'),o=m.classList.toggle('open');h.classList.toggle('open',o);document.body.style.overflow=o?'hidden':'';}
+function closeMenu(){document.getElementById('mobMenu').classList.remove('open');document.getElementById('hmbg').classList.remove('open');document.body.style.overflow='';}
+function goTo(id){closeMenu();var e=document.getElementById(id);if(e)e.scrollIntoView({behavior:'smooth'});}
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();closeMenu();setTimeout(function(){t.scrollIntoView({behavior:'smooth'});},80);}});});
+var themes=['theme-ocean','theme-forest','theme-violet','theme-rose'];
+function setTheme(t,btn){themes.forEach(function(th){document.body.classList.remove(th);});if(t)document.body.classList.add(t);document.querySelectorAll('.tbtn').forEach(function(b){b.classList.remove('on');});btn.classList.add('on');}
+function sendWA(){var n=document.getElementById('fn').value||'Not given',b=document.getElementById('fb').value||'Not given',s=document.getElementById('fs').value,m=document.getElementById('fm').value||'No message';window.open('https://wa.me/923053687680?text='+encodeURIComponent('Hi Hashir! I found you through your website.\n\nName: '+n+'\nBusiness: '+b+'\nService: '+s+'\nMessage: '+m),'_blank');}
+</script>
+</body>
+</html>
